@@ -8,6 +8,11 @@ namespace LineComparison
         {
             Console.WriteLine("Welcome to Line Comparison");
             LenghtofLine();
+
+            // sample use case on how compareTo method works
+            Console.WriteLine(1.CompareTo(1));
+            Console.WriteLine(1.CompareTo(2));
+            Console.WriteLine(2.CompareTo(1));
         }
         public static void LenghtofLine()
         {
@@ -48,13 +53,19 @@ namespace LineComparison
             Console.WriteLine("........................");
             double LenghtofLineTwo = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
             Console.WriteLine("Lenght of Second Line is : {0}", LenghtofLineTwo);
-            if (LenghtofLineOne.Equals(LenghtofLineTwo))
+            int Result = LenghtofLineOne.CompareTo(LenghtofLineTwo);
+
+            if (Result > 0)
             {
-                Console.WriteLine("First Line and Second Lines are Equal");
+                Console.WriteLine("First Line is Greater than Second Line");
+            }
+            else if (Result < 0)
+            {
+                Console.WriteLine("Second Line is Greater tahn First Line");
             }
             else
             {
-                Console.WriteLine("First Line and Second Lines are not Equal");
+                Console.WriteLine("First Line and Second Lines are Equal");
             }
         }
     }
